@@ -1,0 +1,22 @@
+# ENGR 330 Test 2 - Adder Architecture Comparison
+
+Author: Braeden Brouwer  
+Instructor: Dr. Hassan Salamy  
+Course: ENGR 330 - Computer Architecture  
+Semester: Fall 2025  
+Date: October 30, 2025
+
+
+## Overview
+
+This project was done for ENGR 330 Test 2 at the University of St. Thomas.  
+The goal was to design and compare three different N-bit adder architectures using Verilog and test them in Vivado.
+
+Adders implemented:
+- Ripple Carry Adder (RCA)
+- Carry Lookahead Adder (CLA)
+- Prefix Adder
+
+Each adder was parameterized, simulated, and synthesized to compare speed and resource usage.
+
+
