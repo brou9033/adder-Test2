@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_adders_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_adders" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="41031653fs"></ZoomEndTime>
+      <Cursor1Time time="5510000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="210"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/tb_adders/A" type="array">
+      <obj_property name="ElementShortName">A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/B" type="array">
+      <obj_property name="ElementShortName">B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">B[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/Cin" type="logic">
+      <obj_property name="ElementShortName">Cin</obj_property>
+      <obj_property name="ObjectShortName">Cin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/SumRCA" type="array">
+      <obj_property name="ElementShortName">SumRCA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">SumRCA[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/SumCLA" type="array">
+      <obj_property name="ElementShortName">SumCLA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">SumCLA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/SumPFX" type="array">
+      <obj_property name="ElementShortName">SumPFX[7:0]</obj_property>
+      <obj_property name="ObjectShortName">SumPFX[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/CoutRCA" type="logic">
+      <obj_property name="ElementShortName">CoutRCA</obj_property>
+      <obj_property name="ObjectShortName">CoutRCA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/CoutCLA" type="logic">
+      <obj_property name="ElementShortName">CoutCLA</obj_property>
+      <obj_property name="ObjectShortName">CoutCLA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_adders/CoutPFX" type="logic">
+      <obj_property name="ElementShortName">CoutPFX</obj_property>
+      <obj_property name="ObjectShortName">CoutPFX</obj_property>
+   </wvobject>
+</wave_config>

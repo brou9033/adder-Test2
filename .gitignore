@@ -1,0 +1,14 @@
+# Vivado build and simulation folders
+*.jou
+*.log
+*.str
+*.bin
+*.rpt
+*.dcp
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.Xil/
+*.xpr
