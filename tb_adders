@@ -1,0 +1,69 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Testbench: tb_adders
+// Engineer: Braeden Brouwer
+// Description: Clean waveform-only simulation for RCA, CLA, and Prefix adders
+//////////////////////////////////////////////////////////////////////////////////
+
+module tb_adders;
+
+    // 8-bit inputs
+    reg  [7:0] A, B;
+    reg        Cin;
+
+    // 8-bit outputs
+    wire [7:0] SumRCA, SumCLA, SumPFX;
+    wire       CoutRCA, CoutCLA, CoutPFX;
+
+    // Instantiate Ripple Carry Adder
+    rc_adder #(8) RCA (
+        .A(A),
+        .B(B),
+        .cIn(Cin),
+        .Sum(SumRCA),
+        .Cout(CoutRCA)
+    );
+
+    // Instantiate Carry Lookahead Adder
+    cla_adder #(8) CLA (
+        .A(A),
+        .B(B),
+        .cIn(Cin),
+        .Sum(SumCLA),
+        .Cout(CoutCLA)
+    );
+
+    // Instantiate Prefix Adder (new version)
+    prefix_adder_real #(8) PFX (
+        .A(A),
+        .B(B),
+        .Cin(Cin),
+        .Sum(SumPFX),
+        .Cout(CoutPFX)
+    );
+
+    // Apply test patterns
+    initial begin
+        // Initialize inputs
+        A = 0; 
+        B = 0; 
+        Cin = 0;
+        #10;
+
+        // Test 1
+        A = 8'b00001111; B = 8'b00000001; Cin = 0; #10;
+        // Test 2
+        A = 8'b11110000; B = 8'b00001111; Cin = 1; #10;
+        // Test 3
+        A = 8'b10101010; B = 8'b01010101; Cin = 0; #10;
+        // Test 4
+        A = 8'b11111111; B = 8'b00000001; Cin = 0; #10;
+        // Test 5
+        A = 8'b00110011; B = 8'b11001100; Cin = 1; #10;
+
+        // End simulation
+        #10;
+        $finish;
+    end
+
+endmodule
