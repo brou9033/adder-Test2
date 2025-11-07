@@ -1,0 +1,53 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 11/06/2025 06:52:01 PM
+// Design Name: 
+// Module Name: prefix_adder_real
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module prefix_adder_real #(parameter N = 8)(
+    input  [N-1:0] A,
+    input  [N-1:0] B,
+    input          Cin,
+    output [N-1:0] Sum,
+    output         Cout
+);
+    // Step 1: Generate and Propagate
+    wire [N-1:0] G, P;
+    assign G = A & B;  // Generate
+    assign P = A ^ B;  // Propagate
+
+    // Step 2: Carry generation using prefix structure
+    wire [N:0] C;
+    assign C[0] = Cin;
+
+    genvar i;
+    generate
+        for (i = 0; i < N; i = i + 1) begin : carry_loop
+            // Compute carry[i+1] = G[i] | (P[i] & carry[i])
+            assign C[i+1] = G[i] | (P[i] & C[i]);
+        end
+    endgenerate
+
+    // Step 3: Compute sum bits
+    assign Sum = P ^ C[N-1:0];
+
+    // Step 4: Output final carry
+    assign Cout = C[N];
+
+endmodule
