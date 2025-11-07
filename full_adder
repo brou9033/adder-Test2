@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 10/28/2025
+// Design Name: 1-bit Full Adder
+// Module Name: full_adder
+// Project Name: ENGR 330 Test 2
+// Description: 
+//   Simple 1-bit Full Adder to be used in the Ripple Carry Adder.
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+module full_adder(
+    input  A,
+    input  B,
+    input  Cin,
+    output Sum,
+    output Cout
+);
+    assign Sum  = A ^ B ^ Cin;
+    assign Cout = (A & B) | (A & Cin) | (B & Cin);
+endmodule
